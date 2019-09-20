@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  mongodb:
+    ports:
+    - 27017:27017/tcp
+    command:
+    - --auth
+    tty: true
+    image: mongo
+    volumes:
+    - /opt/mongo_data:/data/db
+    networks: 
+    - mongodb-network
+    stdin_open: true
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${db_user_env}
+      MONGO_INITDB_DATABASE: ${dbname_env}
+      MONGO_INITDB_ROOT_PASSWORD: ${db_pass}
+networks:
+  mongodb-network:
+    driver: bridge
