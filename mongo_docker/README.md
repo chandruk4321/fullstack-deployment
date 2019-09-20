@@ -1,6 +1,10 @@
 # mongodb-deployment
 deploying mongodb using docker with authentication enabled. The default login credentials are served through environment variables in docker-compose file. 
 
+## prerequisite
+1. docker installed (my Docker version 19.03.2, build 6a30dfc)
+2. docker-compose installed (my docker-compose version 1.17.1, build unknown)
+
 ## how to run?
 1. change the mongodb credentials in install_mongo.sh
 2. RUN ./install_mongo.sh
