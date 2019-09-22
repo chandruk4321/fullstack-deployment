@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  fullstack-app:
+    ports:
+    - 127.0.0.1:3000:3000/tcp
+    environment:
+      MONGO_HOST: ip.ad.dr.es:27077
+      MONGO_LOGIN: mongourser
+      MONGO_PASSWD: password
+    networks:
+      - fullstackapp-network
+    tty: true
+    image: fullstackapp
+    stdin_open: true
+networks:
+  fullstackapp-network:
+    driver: bridge
