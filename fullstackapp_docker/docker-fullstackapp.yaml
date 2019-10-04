@@ -5,9 +5,7 @@ services:
     ports:
     - 127.0.0.1:3000:3000/tcp
     environment:
-      MONGO_HOST: ip.ad.dr.es:27077
-      MONGO_LOGIN: mongourser
-      MONGO_PASSWD: password
+      MONGODB_URI: mongodb://192.168.8.114:27017/fullstackapp
     networks:
       - fullstackapp-network
     tty: true

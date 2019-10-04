@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  fullstackapp:
+    ports:
+    - 127.0.0.1:3000:3000/tcp
+    environment:
+      MONGODB_URI: mongodb://fullstack-mongo/fullstackapp
+    networks:
+      - fullstackapp-network
+    tty: true
+    image: fullstackapp
+    stdin_open: true
+    container_name: fullstackapp
+  fullstack-mongo:
+    ports:
+    - 27017:27017/tcp
+    tty: true
+    image: mongo
+    volumes:
+    - /opt/fullstack_mongo_data:/data/db
+    networks: 
+    - fullstackapp-network
+    stdin_open: true
+    restart: always
+    container_name: fullstackapp-mongo
+networks:
+  fullstackapp-network:
+    driver: bridge

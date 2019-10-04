@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  fullstack-mongo:
+    ports:
+    - 27017:27017/tcp
+    tty: true
+    image: mongo
+    volumes:
+    - /opt/fullstack_mongo_data:/data/db
+    networks: 
+    - fullstack-mongo-network
+    stdin_open: true
+    restart: always
+    container_name: fullstackapp-mongo
+networks:
+  fullstack-mongo-network:
+    driver: bridge
