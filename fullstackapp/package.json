@@ -113,7 +113,7 @@
     "sinon": "^1.16.1",
     "chai-as-promised": "^5.1.0",
     "chai-things": "^0.2.0",
-    "karma": "~0.13.3",
+    "karma": "~6.3.14",
     "karma-firefox-launcher": "^1.0.0",
     "karma-script-launcher": "^1.0.0",
     "karma-coverage": "^1.0.0",
